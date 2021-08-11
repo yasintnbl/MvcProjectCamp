@@ -146,6 +146,18 @@
     <Compile Include="Migrations\202106131732096_changeabilitypoint2.designer.cs">
       <DependentUpon>202106131732096_changeabilitypoint2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108021303040_add_changed.cs" />
+    <Compile Include="Migrations\202108021303040_add_changed.designer.cs">
+      <DependentUpon>202108021303040_add_changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108021332152_delete_ability.cs" />
+    <Compile Include="Migrations\202108021332152_delete_ability.designer.cs">
+      <DependentUpon>202108021332152_delete_ability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108021346169_deleteability.cs" />
+    <Compile Include="Migrations\202108021346169_deleteability.designer.cs">
+      <DependentUpon>202108021346169_deleteability.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +225,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106131732096_changeabilitypoint2.resx">
       <DependentUpon>202106131732096_changeabilitypoint2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108021303040_add_changed.resx">
+      <DependentUpon>202108021303040_add_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108021332152_delete_ability.resx">
+      <DependentUpon>202108021332152_delete_ability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108021346169_deleteability.resx">
+      <DependentUpon>202108021346169_deleteability.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

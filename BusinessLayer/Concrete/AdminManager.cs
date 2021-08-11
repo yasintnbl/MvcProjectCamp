@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-   public class AdminManager:IAdminService
+    public class AdminManager : IAdminService
     {
         IAdminDal _adminDal;
 
@@ -33,9 +33,9 @@ namespace BusinessLayer.Concrete
             _adminDal.Update(admin);
         }
 
-        public About GetById(int id)
+        public Admin GetById(int id)
         {
-            throw new NotImplementedException();
+            return _adminDal.Get(x => x.AdminID == id);
         }
 
         public Admin GetByName(string name)
@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public List<Admin> GetList()
         {
-            throw new NotImplementedException();
+            return _adminDal.List();
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿@model EntityLayer.Concrete.ImageFile
+
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Görsel Ekleme</h2>
+
+@using (Html.BeginForm("AddImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    <p>Görsel</p>
+    <input type="file" name="ImagePath" />
+    <input type="submit" value="Kaydet" />
+
+}
+

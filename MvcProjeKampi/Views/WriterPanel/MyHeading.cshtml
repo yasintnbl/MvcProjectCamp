@@ -90,14 +90,18 @@
                             {
                                 color2 = "badge badge-danger";
                             }
-                            <tr>
+                        <tr>
+                            @if (item.HeadingStatus == true)
+                            {
                                 <td>
                                     @item.HeadingID.
                                 </td>
                                 <td>
+
                                     <a>
                                         @item.HeadingName
                                     </a>
+
                                     <br />
                                     <small>
                                         @(((DateTime)item.HeadingDate).ToString("dd.mm.yyyy"))
@@ -132,6 +136,7 @@
                                         Sil
                                     </a>
                                 </td>
+                            }
                             </tr>
                         }
                     </tbody>

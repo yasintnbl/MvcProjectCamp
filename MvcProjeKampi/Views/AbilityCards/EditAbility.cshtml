@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Ability
+@{
+    ViewBag.Title = "AddAbility";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yetenek Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("EditAbility", "AbilityCards", FormMethod.Post))
+{
+<div class="form-group">
+    
+    @Html.HiddenFor(x => x.AbiltyID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(x => x.AbiltyName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek Puanı")
+    @Html.TextBoxFor(x => x.AbiltyPoint, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">
+        Yeteneği Düzenle
+    </button>
+</div>
+}

@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Ability 
+@{
+    ViewBag.Title = "AddAbility";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Yetenek Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("AddAbility", "AbilityCards", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(x => x.AbiltyName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AbiltyName)
+    <br />
+    @Html.Label("Yetenek Puanı")
+    @Html.TextBoxFor(x => x.AbiltyPoint, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AbiltyPoint)
+    <br />
+    <button class="btn btn-info">
+       Yetenek Ekle
+    </button>
+</div>
+}
+

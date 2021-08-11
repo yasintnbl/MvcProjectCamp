@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,27 +12,34 @@ namespace MvcProjeKampi.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        ContactManager cm = new ContactManager(new EfContactDal());
+       
+        [AllowAnonymous]
+        public ActionResult HomePage()
         {
+            Context c = new Context();
+            ViewBag.Heading = c.Headings.Select(x => x.HeadingID).Count();
+
+            ViewBag.Content = c.Contents.Select(x => x.ContentID).Count();
+
+            ViewBag.Writer = c.Writers.Select(x => x.WriterID).Count();
+
+            ViewBag.Message = c.Messages.Select(x => x.MessageID).Count();
             return View();
         }
-
-        public ActionResult About()
+        [AllowAnonymous]
+        [HttpGet]
+        public PartialViewResult HomeContact()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return PartialView();
         }
-
-        public ActionResult Contact()
+        [HttpPost]
+        public PartialViewResult HomeContact(Contact contact)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            contact.ContactDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            cm.ContactAdd(contact);
+            return PartialView("HomeContact");
         }
-        public ActionResult Test()
-        {
-            return View();
-        }
+       
     }
 }

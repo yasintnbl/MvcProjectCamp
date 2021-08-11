@@ -1,0 +1,30 @@
+﻿<div class="contact_grid_right">
+    @using (Html.BeginForm("HomeContact", "Home", FormMethod.Post))
+    {
+        <div class="row contact_left_grid">
+            <div class="col-md-6 con-left" data-aos="fade-up">
+                <div class="form-group">
+
+                    <input class="form-control" type="text" name="UserName" placeholder="Adınız" required="">
+                </div>
+                <div class="form-group">
+
+                    <input class="form-control" type="email" name="UserMail" placeholder="Email" required="">
+                </div>
+                <div class="form-group">
+
+                    <input class="form-control" type="text" name="Subject" placeholder="Konu" required="">
+                </div>
+            </div>
+            <div class="col-md-6 con-right" data-aos="fade-up">
+                <div class="form-group">
+                    <textarea id="textarea" name="Message" placeholder="Mesajınız" required=""></textarea>
+                </div>
+            </div>
+            <div class="sub-honey mx-auto mt-3">
+                <input class="form-control" type="submit" value="Gönder">
+            </div>
+        </div> 
+    }
+</div>
+    

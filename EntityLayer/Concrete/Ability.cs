@@ -16,5 +16,9 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string AbiltyName { get; set; }
         public int AbiltyPoint { get; set; }
+
+
+
+   
     }
 }

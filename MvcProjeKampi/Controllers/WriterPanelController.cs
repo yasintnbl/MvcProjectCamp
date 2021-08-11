@@ -112,9 +112,10 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult AllHeading(int p=1)
         {
-            var heading = hm.GetList().ToPagedList(p, 4);
+            var heading = hm.GetList().Where(x=>x.HeadingStatus==true).ToPagedList(p, 4);
             return View(heading);
         }
+        
         
 
 

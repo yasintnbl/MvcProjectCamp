@@ -11,10 +11,12 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         // GET: Register
         AdminManager abm = new AdminManager(new EfAdminDal());
+        WriterManager wm = new WriterManager(new EfWriterDal());
 
         [HttpGet]
         public ActionResult Index()
@@ -32,6 +34,22 @@ namespace MvcProjeKampi.Controllers
             admin.AdminRole = "B";
             abm.AdminAdd(admin);
             return RedirectToAction("Index", "Login");
+        }
+        [HttpGet]
+        public ActionResult WriterRegister()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterRegister(Writer writer)
+        {
+            SHA1 sha1 = new SHA1CryptoServiceProvider();
+            string password = writer.WriterPassword;
+            string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            writer.WriterPassword = result;            
+            wm.WriterAdd(writer);
+            return RedirectToAction("WriterLogin", "Login");
         }
     }
 }

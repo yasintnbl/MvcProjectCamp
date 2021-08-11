@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Ability>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}<head>
+    <title>Yetenekler</title>
+</head>
+<h2>Yetenekler</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yetenek Adı</th>
+        <th>Yetenek Puanı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+    <th>@x.AbiltyID</th>
+    <td>@x.AbiltyName</td>
+    <td>@x.AbiltyPoint</td>
+    <td><a href="/AbilityCards/DeleteAbility/@x.AbiltyID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/AbilityCards/EditAbility/@x.AbiltyID" class="btn btn-warning">Güncelle</a></td>    
+</tr>
+    }
+</table>
+<a href="/AbilityCards/AddAbility" class="btn btn-danger">Yeni Yetenek Ekle</a>
+<br />
+

@@ -11,7 +11,7 @@ namespace BusinessLayer.Abstract
     {
         List<Admin> GetList();
         void AdminAdd(Admin admin);
-        About GetById(int id);
+        Admin GetById(int id);
         void AdminDelete(Admin admin);
         void AdminUpdate(Admin admin);
         Admin GetByName(String name);

@@ -10,13 +10,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Gallery</title>
+    <title>Gallery</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/Mvc Proje Kampı Tema/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <!-- Ekko Lightbox -->
-    <link rel="stylesheet" href="~/Mvc Proje Kampı Tema/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -57,15 +57,20 @@
                             <div class="row">
                                 @foreach (var item in Model)
                                 {
-                                <div class="col-sm-2">
-                                    <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
-                                        <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" />
-                                    </a>
-                                </div>
+                                    <div class="col-sm-2">
+                                        <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+
+                                            <img src="@item.ImagePath" style="height:100px; width:140px" class="img-fluid mb-2" alt="white sample" />
+
+                                        </a>
+                                    </div>
                                 }
                             </div>
+
                         </div>
+
                     </div>
+                    <a href="/Gallery/AddImage/">Görsel Ekle</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
